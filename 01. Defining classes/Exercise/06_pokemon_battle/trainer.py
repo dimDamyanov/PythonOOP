@@ -1,4 +1,4 @@
-from project1.pokemon import Pokemon
+from .pokemon import Pokemon
 
 
 class Trainer:
@@ -20,5 +20,5 @@ class Trainer:
         return 'Pokemon is not caught'
 
     def trainer_data(self):
-        return f'Pokemon Trainer {self.name}\n' + f'Pokemon count {len(self.pokemon)}\n' + '\n'.join(
-            ['- ' + p.pokemon_details() for p in self.pokemon])
+        return f'Pokemon Trainer {self.name}\n' + f'Pokemon count {len(self.pokemon)}' + ''.join(
+            ['\n- ' + p.pokemon_details() + '\n' for p in self.pokemon])
