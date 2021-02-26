@@ -1,13 +1,13 @@
 class PizzaDelivery:
-    ordered = False
 
     def __init__(self, name: str, price: float, ingredients: dict):
         self.name = name
         self.price = price
         self.ingredients = ingredients
+        self.ordered = False
 
     def add_extra(self, ingredient: str, quantity: int, ingredient_price: float):
-        if not PizzaDelivery.ordered:
+        if not self.ordered:
             if ingredient not in self.ingredients:
                 self.ingredients[ingredient] = 0
             self.ingredients[ingredient] += quantity
@@ -16,7 +16,7 @@ class PizzaDelivery:
             return f'Pizza {self.name} already prepared and we can\'t make any changes!'
 
     def remove_ingredient(self, ingredient: str, quantity: int, ingredient_price: float):
-        if not PizzaDelivery.ordered:
+        if not self.ordered:
             if ingredient not in self.ingredients:
                 return f'Wrong ingredient selected! We do not use {ingredient} in {self.name}!'
             elif quantity > self.ingredients[ingredient]:
@@ -28,7 +28,7 @@ class PizzaDelivery:
             return f'Pizza {self.name} already prepared and we can\'t make any changes!'
 
     def make_order(self):
-        PizzaDelivery.ordered = True
+        self.ordered = True
         return f'You\'ve ordered pizza {self.name} prepared with {", ".join([f"{ingredient}: {quantity}" for ingredient, quantity in self.ingredients.items()])} and the price will be {self.price}lv.'
 
 
