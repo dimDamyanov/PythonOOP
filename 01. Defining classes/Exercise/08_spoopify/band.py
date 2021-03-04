@@ -15,7 +15,7 @@ class Band:
 
     def remove_album(self, album_name: str):
         for i in range(len(self.albums)):
-            if album_name == self.albums[i].name:
+            if album_name == self.albums[i].first_name:
                 if self.albums[i].published:
                     return 'Album has been published. It cannot be removed.'
                 else:

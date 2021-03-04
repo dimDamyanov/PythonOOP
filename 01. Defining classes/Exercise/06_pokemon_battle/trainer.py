@@ -13,7 +13,7 @@ class Trainer:
         return 'This pokemon is already caught'
 
     def release_pokemon(self, pokemon_name):
-        filtered = [p for p in self.pokemon if p.name == pokemon_name]
+        filtered = [p for p in self.pokemon if p.first_name == pokemon_name]
         if filtered:
             self.pokemon.remove(filtered[0])
             return f'You have released {pokemon_name}'

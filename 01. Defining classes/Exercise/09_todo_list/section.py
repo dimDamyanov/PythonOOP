@@ -14,7 +14,7 @@ class Section:
 
     def complete_task(self, task_name: str):
         for i in range(len(self.tasks)):
-            if self.tasks[i].name == task_name:
+            if self.tasks[i].first_name == task_name:
                 self.tasks[i].completed = True
                 return f'Completed task {task_name}'
         return f'Could not find task with the name {task_name}'
