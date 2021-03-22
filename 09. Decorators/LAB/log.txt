@@ -1,0 +1,1 @@
+get_message() returned Hi dadasdsd
