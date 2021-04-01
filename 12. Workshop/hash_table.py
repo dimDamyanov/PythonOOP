@@ -72,18 +72,10 @@ class HashTable:
     def __len__(self):
         return self.count
 
-
-table = HashTable()
-
-table["name"] = "Peter"
-table["age"] = 25
-table["age"] = 26
-
-print(table)
-print(table.get("name"))
-print(table["age"])
-print(len(table))
-print("age" in table)
-table.remove("age")
-print("age" in table)
-print(len(table))
+    def __repr__(self):
+        items = []
+        for key_nested_list, value_nested_list in zip(self.keys, self.values):
+            if key_nested_list and value_nested_list:
+                for key, value in zip(key_nested_list, value_nested_list):
+                    items.append((key, value))
+        return '{' + ', '.join([f'{key}: {value}' for key, value in items]) + '}'
